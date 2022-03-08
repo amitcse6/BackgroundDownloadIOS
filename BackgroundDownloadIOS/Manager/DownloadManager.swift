@@ -25,7 +25,7 @@ class DownloadManager: NSObject, ObservableObject {
     private override init() {
         super.init()
         //let config = URLSessionConfiguration.default
-        let config = URLSessionConfiguration.background(withIdentifier: "MySession")
+        let config = URLSessionConfiguration.background(withIdentifier: "com.amit.backgrounddownloadios")
         config.isDiscretionary = true
         config.sessionSendsLaunchEvents = true
         urlSession = URLSession(configuration: config, delegate: self, delegateQueue: nil) //OperationQueue.main
@@ -47,12 +47,12 @@ class DownloadManager: NSObject, ObservableObject {
     func startDownload(_ url: URL, _ fileName: String?) {
         let task = urlSession.downloadTask(with: url)
         task.earliestBeginDate = Date().addingTimeInterval(1)
-        task.countOfBytesClientExpectsToSend = 200
-        task.countOfBytesClientExpectsToReceive = 500 * 1024
+        //task.countOfBytesClientExpectsToSend = 200
+        //task.countOfBytesClientExpectsToReceive = 500 * 1024
         task.resume()
         tasks.append(task)
     }
-    
+    //14679850 22429884
     private func updateTasks() {
         urlSession.getAllTasks { tasks in
             DispatchQueue.main.async {
