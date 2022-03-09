@@ -47,12 +47,12 @@ class DownloadManager: NSObject, ObservableObject {
     func startDownload(_ url: URL, _ fileName: String?) {
         let task = urlSession.downloadTask(with: url)
         task.earliestBeginDate = Date().addingTimeInterval(1)
-        //task.countOfBytesClientExpectsToSend = 200
-        //task.countOfBytesClientExpectsToReceive = 500 * 1024
+        task.countOfBytesClientExpectsToSend = 200
+        task.countOfBytesClientExpectsToReceive = 500 * 1024
         task.resume()
         tasks.append(task)
     }
-    //14679850 22429884
+
     private func updateTasks() {
         urlSession.getAllTasks { tasks in
             DispatchQueue.main.async {
@@ -81,6 +81,11 @@ extension DownloadManager: URLSessionDelegate, URLSessionDownloadDelegate {
     func urlSession(_: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error {
             print("Download error: \(String(describing: error))")
+            let _error = error as NSError
+            if let resumeData = _error.userInfo[NSURLSessionDownloadTaskResumeData] as? Data {
+                let task = DownloadManager.shared().urlSession.downloadTask(withResumeData: resumeData)
+                task.resume()
+            }
         } else {
             print("Task finished: \(task)")
         }

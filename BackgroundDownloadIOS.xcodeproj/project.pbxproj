@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8939691A27D86ECF006F5A5E /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939691927D86ECF006F5A5E /* Data+Extension.swift */; };
 		8955919F27D6F73A006F47CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955919E27D6F73A006F47CF /* AppDelegate.swift */; };
 		895591A127D6F73A006F47CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895591A027D6F73A006F47CF /* SceneDelegate.swift */; };
 		895591A327D6F73A006F47CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895591A227D6F73A006F47CF /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8939691927D86ECF006F5A5E /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		8955919B27D6F73A006F47CF /* BackgroundDownloadIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundDownloadIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8955919E27D6F73A006F47CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		895591A027D6F73A006F47CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8939691827D86EBA006F5A5E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8939691927D86ECF006F5A5E /* Data+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		8955919227D6F73A006F47CF = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		8955919D27D6F73A006F47CF /* BackgroundDownloadIOS */ = {
 			isa = PBXGroup;
 			children = (
+				8939691827D86EBA006F5A5E /* Extension */,
 				895591CE27D6F804006F47CF /* Manager */,
 				8955919E27D6F73A006F47CF /* AppDelegate.swift */,
 				895591A027D6F73A006F47CF /* SceneDelegate.swift */,
@@ -271,6 +282,7 @@
 			files = (
 				895591A327D6F73A006F47CF /* ViewController.swift in Sources */,
 				8955919F27D6F73A006F47CF /* AppDelegate.swift in Sources */,
+				8939691A27D86ECF006F5A5E /* Data+Extension.swift in Sources */,
 				895591A127D6F73A006F47CF /* SceneDelegate.swift in Sources */,
 				895591D027D6F812006F47CF /* DownloadManager.swift in Sources */,
 			);
